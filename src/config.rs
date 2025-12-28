@@ -1,10 +1,11 @@
+use std::sync::Arc;
 use anyhow::Context;
 use config::{Config, File};
 use serde::Deserialize;
 
 #[derive(Debug, Deserialize)]
 pub struct AppConfig {
-    pub cookie: String,
+    pub cookie: Arc<String>,
     pub email_config: Option<EmailConfig>,
 }
 
